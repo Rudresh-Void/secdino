@@ -2,34 +2,32 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import {Demo} from './Component/Demo'
-import {Gigademo} from './Component/Gigademo'
 
 function App() {
-  const [count, setCount] = useState(0)
+  function fun() {
+    alert("You clicked on Button")
+  }
+  const fruit=(name,ap,bn)=> {
+    alert (name,ap,bn)
+  }
+
+   let data="Demo"
+  function updata() {
+    data="Example"
+    alert(data);
+
+  }
   return (
-    <div>
-      <h1>Welcome</h1>
-      <h1>Dino</h1>
-      <Employee></Employee>
-      <New></New>
-      <Demo></Demo>
-      <Gigademo></Gigademo>
-    </div>
-  )
-}
-
-function Employee()
-{
-  return(
-    <h1>This is Employee component</h1>
-  )
-}
-
-function New()
-{
-  return(
-    <h1>Welcome to darkside</h1>
+    <>
+      <h1><u>Example of Arrow function</u></h1>
+      <button onClick={fun}>Click on button</button>
+      <button onClick={()=>fruit("First Parameter")}>Arrow Fruit Button</button>
+      <button onClick={()=>fruit("You clicked on Apple")}>APPLE</button>
+      <button onClick={()=>fruit("You clicked on Banana")}>BANANA</button>
+      <h1><u>Sate in react</u></h1>
+      <h1>{data}</h1>
+      <button onClick={updata}>Click to change value</button>
+    </>
   )
 }
 
